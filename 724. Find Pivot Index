@@ -1,0 +1,16 @@
+class Solution(object):
+    def pivotIndex(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        arrsum=sum(nums)
+        arrleft=0
+        for i in range(len(nums)):
+            arrsum-=nums[i]
+            if(arrsum==arrleft):
+                return i
+            arrleft+=nums[i]
+
+        return -1
+
